@@ -1,5 +1,6 @@
 class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /invoices
   # GET /invoices.json
@@ -70,6 +71,6 @@ class InvoicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invoice_params
-      params.require(:invoice).permit(:date, :company, :tax, :salesperson)
+      params.require(:invoice).permit(:date, :company, :tax, :salesperson, :status_type)
     end
 end
