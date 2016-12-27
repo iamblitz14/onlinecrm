@@ -1,4 +1,3 @@
-
 <h1>Listing Invoices</h1>
 
 <div class="row">
@@ -37,7 +36,7 @@
           <td><%= invoice.date %></td>
           <td><%= invoice.company %></td>
           <td><%= invoice.tax %></td>
-          <td><%= invoice.salesperson %></td>
+          <td><%= invoice.employee.name %></td>
           <td><%= invoice.status_type %></td>
           <td><%= link_to 'Show', invoice, class: 'btn btn-info' %></td>
           <td><%= link_to 'Edit', edit_invoice_path(invoice), class: 'btn btn-warning' %></td>

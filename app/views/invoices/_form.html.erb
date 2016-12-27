@@ -4,7 +4,7 @@
   <%= f.input :date %>
   <%= f.input :company %>
   <%= f.input :tax %>
-  <%= f.input :salesperson %>
+  <%= f.association :employee %>
   <%= f.input :status_type, label: "Status", collection: [ "PENDING", "PAID"] %>
   <%#= f.input :status_type, label: "Status", collection: [ "PENDING", "PAID"], :as => :radio_buttons %>
   <%= f.error :base %>
