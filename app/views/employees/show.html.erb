@@ -1,19 +1,25 @@
-<h2>Employee details</h2>
-<br>
-<p>
-  <strong>Name:</strong>
-  <%= @employee.name %>
-</p>
+<%= render 'shared/navbar' %>
 
-<p>
-  <strong>Contact Number:</strong>
-  <%= @employee.phone %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Position:</strong>
-  <%= @employee.jobtype %>
-</p>
-<br>
-<%= link_to 'Edit', edit_employee_path(@employee), class: 'btn btn-default' %> |
-<%= link_to 'Back', employees_path, class: 'btn btn-default' %>
+	<h2>Employee details</h2>
+	<br>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @employee.name %>
+	</p>
+
+	<p>
+	  <strong>Contact Number:</strong>
+	  <%= @employee.phone %>
+	</p>
+
+	<p>
+	  <strong>Position:</strong>
+	  <%= @employee.jobtype %>
+	</p>
+	<br>
+	<%= link_to 'Edit', edit_employee_path(@employee), class: 'btn btn-default' %> |
+	<%= link_to 'Back', employees_path, class: 'btn btn-default' %>
+
+</div>

@@ -1,29 +1,35 @@
-<h2>Invoice details</h2>
-<br>
-<p>
-  <strong>Date:</strong>
-  <%= @invoice.date %>
-</p>
+<%= render 'shared/navbar' %>
 
-<p>
-  <strong>Company:</strong>
-  <%= @invoice.company %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Tax:</strong>
-  <%= @invoice.tax %>
-</p>
+  <h2>Invoice details</h2>
+  <br>
+  <p>
+    <strong>Date:</strong>
+    <%= @invoice.date %>
+  </p>
 
-<p>
-  <strong>Salesperson:</strong>
-  <%= @invoice.employee.name %>
-</p>
+  <p>
+    <strong>Company:</strong>
+    <%= @invoice.company %>
+  </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @invoice.status_type %>
-</p>
-<br>
-<%= link_to 'Edit', edit_invoice_path(@invoice), class: 'btn btn-default' %> |
-<%= link_to 'Back', invoices_path, class: 'btn btn-default' %>
+  <p>
+    <strong>Tax:</strong>
+    <%= @invoice.tax %>
+  </p>
+
+  <p>
+    <strong>Salesperson:</strong>
+    <%= @invoice.employee.name %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= @invoice.status_type %>
+  </p>
+  <br>
+  <%= link_to 'Edit', edit_invoice_path(@invoice), class: 'btn btn-default' %> |
+  <%= link_to 'Back', invoices_path, class: 'btn btn-default' %>
+
+</div>

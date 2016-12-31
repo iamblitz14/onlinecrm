@@ -1,6 +1,12 @@
-<h1>Editing Invoice</h1>
+<%= render 'shared/navbar' %>
 
-<%= render 'form' %>
+<div class="container">
 
-<%= link_to 'Show', @invoice, class: 'btn btn-default' %> |
-<%= link_to 'Back', invoices_path, class: 'btn btn-default' %>
+	<h1>Editing Invoice</h1>
+
+	<%= render 'form' %>
+
+	<%= link_to 'Show', @invoice, class: 'btn btn-default' %> |
+	<%= link_to 'Back', invoices_path, class: 'btn btn-default' %>
+
+</div>
