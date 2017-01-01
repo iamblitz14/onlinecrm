@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :employees
 
   resources :invoices do
-      resources :purchases, except: [:index], controller: 'invoices/purchases'
+      resources :purchases, except: [:index, :show], controller: 'invoices/purchases'
       #the above code exclude the index view call, and points the new location of the controller
   end
 

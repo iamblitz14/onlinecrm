@@ -1,31 +1,21 @@
 class Invoices::PurchasesController < ApplicationController
   #before_action :set_purchase, only: [:show, :edit, :update, :destroy]
-
-  # GET /purchases
-  # GET /purchases.json
-  def index
-    @purchases = Purchase.all
-  end
-
-  # GET /purchases/1
-  # GET /purchases/1.json
-  def show
-  end
+  before_action :set_invoice
+  before_action :set_purchase, except: [:new, :create]
 
   # GET /purchases/new
   def new
-    @invoice = Invoice.find(params[:invoice_id])
     @purchase = Purchase.new
   end
 
   # GET /purchases/1/edit
   def edit
+
   end
 
   # POST /purchases
   # POST /purchases.json
   def create
-    @invoice = Invoice.find(params[:invoice_id])
     @purchase = Purchase.new(purchase_params)
     @purchase.invoice = @invoice
 
@@ -45,11 +35,11 @@ class Invoices::PurchasesController < ApplicationController
   def update
     respond_to do |format|
       if @purchase.update(purchase_params)
-        format.html { redirect_to @purchase, notice: 'Purchase was successfully updated.' }
-        format.json { render :show, status: :ok, location: @purchase }
+        format.html { redirect_to @invoice, notice: 'Purchase was successfully updated.' }
+        format.json { render :show, status: :ok, location: @invoice }
       else
         format.html { render :edit }
-        format.json { render json: @purchase.errors, status: :unprocessable_entity }
+        format.json { render json: @invoice.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,9 +47,6 @@ class Invoices::PurchasesController < ApplicationController
   # DELETE /purchases/1
   # DELETE /purchases/1.json
   def destroy
-
-    @invoice = Invoice.find(params[:invoice_id])
-    @purchase = Purchase.find(params[:id])
     title = @purchase.name
 
     if @purchase.destroy
@@ -78,8 +65,12 @@ class Invoices::PurchasesController < ApplicationController
       @purchase = Purchase.find(params[:id])
     end
 
+    def set_invoice
+      @invoice = Invoice.find(params[:invoice_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def purchase_params
-      params.require(:purchase).permit(:name, :category, :quantity, :invoice_id)
+      params.require(:purchase).permit(:name, :category, :quantity, :invoice_id, :price)
     end
 end
