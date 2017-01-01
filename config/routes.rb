@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :purchases
   resources :companies do
     collection { post :import }
   end
 
   resources :employees
 
-  resources :invoices
+  resources :invoices do
+      resources :purchases, except: [:index], controller: 'invoices/purchases'
+      #the above code exclude the index view call, and points the new location of the controller
+  end
 
   devise_for :users
 

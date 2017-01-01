@@ -28,7 +28,35 @@
     <strong>Status:</strong>
     <%= @invoice.status_type %>
   </p>
+
+  <hr class="style13">
+
+  <h2>Purchases</h2>
+  <div class="media">
+    <div class="media-body">
+      <table class="table table-striped table-condensed">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @purchases.each do |purchase| %>
+            <tr>
+              <td><h4><%= purchase.name %></h4></td>
+              <td><h4><%= purchase.category %></h4></td>
+              <td><h4><%= purchase.quantity %></h4></td>
+            </tr>
+          <% end %>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
   <br>
+
   <%= link_to 'Edit', edit_invoice_path(@invoice), class: 'btn btn-default' %> |
   <%= link_to 'Back', invoices_path, class: 'btn btn-default' %>
 
