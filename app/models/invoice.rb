@@ -6,5 +6,6 @@ class Invoice < ActiveRecord::Base
 	validates :status_type, presence: true
 
 	belongs_to :employee
-
+	has_many :purchases
+	
 end
