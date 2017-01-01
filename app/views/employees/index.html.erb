@@ -23,7 +23,7 @@
             <td><%= employee.jobtype %></td>
             <td><%= link_to 'Show', employee, class: 'btn btn-info' %></td>
             <td><%= link_to 'Edit', edit_employee_path(employee), class: 'btn btn-warning' %></td>
-            <td><%= link_to 'Destroy', employee, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Delete', employee, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
