@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+
+  resources :companies do
+    collection { post :import }
+  end
+
   resources :employees
+
   resources :invoices
+
   devise_for :users
+
   get 'welcome/index'
 
   get 'welcome/about'

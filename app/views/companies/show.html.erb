@@ -1,0 +1,30 @@
+<%= render 'shared/navbar' %>
+
+<div class="container">
+
+  <h2>Company details</h2>
+  <br>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @company.name %>
+	</p>
+
+	<p>
+	  <strong>Manager:</strong>
+	  <%= @company.manager %>
+	</p>
+
+	<p>
+	  <strong>Status:</strong>
+	  <%= @company.status %>
+	</p>
+
+	<p>
+	  <strong>Terms:</strong>
+	  <%= @company.terms %>
+	</p>
+	<br>
+	<%= link_to 'Edit', edit_company_path(@company), class: 'btn btn-default' %> |
+	<%= link_to 'Back', companies_path, class: 'btn btn-default' %>
+
+</div>
