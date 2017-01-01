@@ -1,5 +1,12 @@
-<h1>New Purchase</h1>
+<%= render 'shared/navbar' %>
 
-<%= render 'form' %>
+<div class="container">
 
-<%= link_to 'Back', purchases_path %>
+	<h1>New Purchase</h1>
+
+	<%= render 'form' %>
+
+<%= link_to "Back", invoice_path(@invoice), class: 'btn btn-default' %>
+</div>
+
+
